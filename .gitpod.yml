@@ -1,0 +1,18 @@
+
+image: nberlette/gitpod-enhanced
+
+# List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
+tasks:
+  - init: |
+      pip3 install -e
+      pip3 install --upgrade flake8 black pylint
+    command: |
+      if [[ -n "$BMW_USER" && -n "$BMW_PASS" && -n "$BMW_REGION" ]]; then
+        bimmer_connected "$BMW_USER" "$BMW_PASS" "$BMW_REGION"
+      fi
+vscode:
+  extensions:
+    - ms-toolsai.jupyter
+    - ms-python.python
+    - eamodio.gitlens
+    - jock.svg
