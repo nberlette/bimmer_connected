@@ -10,9 +10,17 @@ tasks:
       if [[ -n "$BMW_USER" && -n "$BMW_PASS" && -n "$BMW_REGION" ]]; then
         bimmer_connected "$BMW_USER" "$BMW_PASS" "$BMW_REGION"
       fi
+
 vscode:
   extensions:
     - ms-toolsai.jupyter
     - ms-python.python
     - eamodio.gitlens
     - jock.svg
+
+github:
+  prebuilds:
+    master: true
+    branches: true
+    addLabel: true
+    addCheck: true
